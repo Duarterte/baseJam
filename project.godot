@@ -11,8 +11,17 @@ config_version=5
 [application]
 
 config/name="Base Project"
+run/main_scene="res://logic/ui/MainMenu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+SGlobal="*res://logic/data/SGlobal.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/initpluggin/plugin.cfg")
 
 [rendering]
 

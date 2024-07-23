@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfhl0rkt87v0q"]
+
+[ext_resource type="Script" path="res://addons/zl_init_plugin/addonScript.gd" id="1_jni07"]
+
+[node name="AddonDock" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jni07")
+
+[node name="folderTree" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.048
+offset_bottom = -0.104
+grow_horizontal = 2
+text = "Create 3d Folder Tree"
+
+[connection signal="pressed" from="folderTree" to="." method="_on_button_pressed"]

@@ -21,7 +21,7 @@ SGlobal="*res://logic/data/SGlobal.gd"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/initpluggin/plugin.cfg")
+enabled=PackedStringArray("res://addons/zl_init_plugin/plugin.cfg")
 
 [rendering]
 

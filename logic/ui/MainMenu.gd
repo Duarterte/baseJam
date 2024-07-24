@@ -11,3 +11,7 @@ func _ready():
 		remove_child($SceneEntryCurtain)
 		SGlobal.firstBoot = false
 		
+
+
+func _on_quit_pressed():
+	get_tree().quit()

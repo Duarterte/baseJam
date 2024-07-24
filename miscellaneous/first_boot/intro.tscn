@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bj6xvnc0d7vq7"]
 
-[ext_resource type="VideoStream" path="res://miscellaneous/first_boot/ok.ogv" id="1_n6cib"]
+[ext_resource type="VideoStream" path="res://miscellaneous/first_boot/intro.ogv" id="1_n6cib"]
 [ext_resource type="Script" path="res://miscellaneous/first_boot/intro.gd" id="2_mejl8"]
 [ext_resource type="AudioStream" uid="uid://dx4e5oeywjyn6" path="res://miscellaneous/first_boot/ticking2.mp3" id="3_8g6ji"]
 

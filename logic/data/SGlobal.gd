@@ -1,5 +1,9 @@
 extends Node
 
-var gameName = "Game Title in res://logic/data/SGlobal.gd"
+var gameName: String = "Game Title in res://logic/data/SGlobal.gd"
+var version: String  = "V0.0.1"
+var firstBoot: bool  = true
+
 func _ready():
-	pass
+	print(gameName + " " + version)
+	

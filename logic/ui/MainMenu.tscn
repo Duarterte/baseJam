@@ -1,6 +1,44 @@
-[gd_scene load_steps=2 format=3 uid="uid://nhx6nh0hpm76"]
+[gd_scene load_steps=5 format=3 uid="uid://nhx6nh0hpm76"]
 
 [ext_resource type="Script" path="res://logic/ui/MainMenu.gd" id="1_5d2fq"]
+
+[sub_resource type="Animation" id="Animation_2w6ai"]
+resource_name = "curtainAnim"
+length = 2.0
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SceneEntryCurtain:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(3.3412, 5.65685),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_bd8vy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SceneEntryCurtain:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bfbl1"]
+_data = {
+"RESET": SubResource("Animation_bd8vy"),
+"curtainAnim": SubResource("Animation_2w6ai")
+}
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -26,11 +64,11 @@ anchors_preset = -1
 anchor_left = 0.395
 anchor_top = 0.262
 anchor_right = 0.605
-anchor_bottom = 1.0
+anchor_bottom = 0.41
 offset_left = 0.459991
 offset_top = 0.223984
 offset_right = -0.460022
-offset_bottom = -382.4
+offset_bottom = -0.0800171
 
 [node name="StartBTN" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -39,3 +77,25 @@ text = "Start"
 [node name="Settings" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Settings"
+
+[node name="versionLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="SceneEntryCurtain" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 648.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_bfbl1")
+}

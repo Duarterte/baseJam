@@ -11,9 +11,11 @@ config_version=5
 [application]
 
 config/name="Base Project"
-run/main_scene="res://logic/ui/MainMenu.tscn"
+run/main_scene="res://miscellaneous/first_boot/intro.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
+boot_splash/image="res://miscellaneous/first_boot/bootsplash.png"
 config/icon="res://icon.svg"
+boot_splash/minimum_display_time=300
 
 [autoload]
 
@@ -22,6 +24,12 @@ SGlobal="*res://logic/data/SGlobal.gd"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/zl_init_plugin/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://world/": "orange"
+}
 
 [rendering]
 

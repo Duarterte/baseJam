@@ -14,7 +14,7 @@ func checkIfResoureceIsLoaded(path: String) -> void:
 	
 func _ready():
 	$AudioStreamPlayer.play(0.)
-	mainMenuPath = "res://logic/ui/MainMenu.tscn"
+	mainMenuPath = "res://logic/rootScn.tscn"
 	ResourceLoader.load_threaded_request(mainMenuPath)
 	
 

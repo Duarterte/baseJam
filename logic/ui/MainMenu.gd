@@ -5,13 +5,17 @@ extends Control
 func _ready():
 	if SGlobal.gameName: gametTilteLabel.text = SGlobal.gameName
 	if SGlobal.gameName: versionLabel.text    = SGlobal.version
-	if SGlobal.firstBoot:
+	if SGlobal.config[SGlobal.FIRSTBOOT]:
 		$AnimationPlayer.play("curtainAnim", 0.)
 		await get_tree().create_timer(2.).timeout
 		remove_child($SceneEntryCurtain)
-		SGlobal.firstBoot = false
+		SGlobal.config[SGlobal.FIRSTBOOT] = false
+	else:
+		remove_child($SceneEntryCurtain)
 		
-
-
 func _on_quit_pressed():
 	get_tree().quit()
+
+
+func _on_settings_pressed():
+	get_tree().change_scene_to_file("res://logic/ui/settings.tscn")

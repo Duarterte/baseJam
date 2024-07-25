@@ -109,6 +109,9 @@ theme_override_constants/margin_bottom = 0
 layout_mode = 2
 text = "Quit"
 
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+
 [node name="versionLabel" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 3

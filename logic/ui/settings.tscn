@@ -34,10 +34,7 @@ alignment = 1
 [node name="MarginContainer" type="MarginContainer" parent="ZVmain/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/margin_left = 30
-theme_override_constants/margin_top = 50
-theme_override_constants/margin_right = 30
-theme_override_constants/margin_bottom = 50
+theme_override_constants/margin_bottom = 10
 
 [node name="HSplitContainer" type="HSplitContainer" parent="ZVmain/VBoxContainer/MarginContainer"]
 layout_mode = 2
@@ -53,11 +50,32 @@ layout_mode = 2
 text = "Show FPS"
 horizontal_alignment = 1
 
+[node name="MarginContainer3" type="MarginContainer" parent="ZVmain/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 10
+
+[node name="HSplitContainer" type="HSplitContainer" parent="ZVmain/VBoxContainer/MarginContainer3"]
+layout_mode = 2
+
+[node name="sensText" type="LineEdit" parent="ZVmain/VBoxContainer/MarginContainer3/HSplitContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HSlider" type="HSlider" parent="ZVmain/VBoxContainer/MarginContainer3/HSplitContainer"]
+custom_minimum_size = Vector2(0.955, 0)
+layout_mode = 2
+size_flags_vertical = 1
+min_value = 0.025
+max_value = 10.5
+step = 0.025
+value = 0.2
+
 [node name="MarginContainer2" type="MarginContainer" parent="ZVmain/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/margin_left = 30
-theme_override_constants/margin_right = 30
 
 [node name="HSplitContainer" type="HSplitContainer" parent="ZVmain/VBoxContainer/MarginContainer2"]
 layout_mode = 2
@@ -73,5 +91,12 @@ layout_mode = 2
 layout_mode = 2
 text = "Go Back"
 
+[connection signal="gui_input" from="ZVmain" to="." method="_on_z_vmain_gui_input"]
+[connection signal="gui_input" from="ZVmain/VBoxContainer" to="." method="_on_v_box_container_gui_input"]
 [connection signal="toggled" from="ZVmain/VBoxContainer/MarginContainer/HSplitContainer/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="mouse_exited" from="ZVmain/VBoxContainer/MarginContainer3" to="." method="_on_margin_container_3_mouse_exited"]
+[connection signal="gui_input" from="ZVmain/VBoxContainer/MarginContainer3/HSplitContainer/sensText" to="." method="_on_sens_text_gui_input"]
+[connection signal="text_changed" from="ZVmain/VBoxContainer/MarginContainer3/HSplitContainer/sensText" to="." method="_on_sens_text_text_changed"]
+[connection signal="drag_ended" from="ZVmain/VBoxContainer/MarginContainer3/HSplitContainer/HSlider" to="." method="_on_h_slider_drag_ended"]
+[connection signal="value_changed" from="ZVmain/VBoxContainer/MarginContainer3/HSplitContainer/HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="pressed" from="ZVmain/VBoxContainer/MarginContainer2/HSplitContainer/PanelContainer/back_btn" to="." method="_on_back_btn_pressed"]

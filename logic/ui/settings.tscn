@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ctnekv0pmqtjs"]
+[gd_scene load_steps=4 format=3 uid="uid://ctnekv0pmqtjs"]
 
 [ext_resource type="Script" path="res://logic/ui/settings.gd" id="1_mcrtx"]
 [ext_resource type="PackedScene" uid="uid://dldj2bnax5vc6" path="res://logic/configuration/ZVMmain.tscn" id="2_x22ei"]
+[ext_resource type="PackedScene" uid="uid://f41wub5py1t5" path="res://logic/ui/sound/menuSound.tscn" id="2_ydun7"]
 
 [node name="Settings" type="Control"]
 layout_mode = 3
@@ -11,6 +12,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mcrtx")
+
+[node name="MenuSound" parent="." instance=ExtResource("2_ydun7")]
 
 [node name="ZVmain" parent="." instance=ExtResource("2_x22ei")]
 layout_mode = 1
@@ -87,7 +90,7 @@ theme_override_constants/margin_left = 44
 [node name="PanelContainer" type="PanelContainer" parent="ZVmain/VBoxContainer/MarginContainer2/HSplitContainer"]
 layout_mode = 2
 
-[node name="back_btn" type="Button" parent="ZVmain/VBoxContainer/MarginContainer2/HSplitContainer/PanelContainer"]
+[node name="back_btn" type="Button" parent="ZVmain/VBoxContainer/MarginContainer2/HSplitContainer/PanelContainer" groups=["menu_btn"]]
 layout_mode = 2
 text = "Go Back"
 

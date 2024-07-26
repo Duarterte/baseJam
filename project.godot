@@ -19,6 +19,7 @@ boot_splash/minimum_display_time=300
 
 [autoload]
 
+MenuSound="*res://logic/ui/sound/menuSound.tscn"
 SGlobal="*res://logic/data/SGlobal.gd"
 
 [editor_plugins]

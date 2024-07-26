@@ -19,10 +19,13 @@ func _on_button_pressed():
 	if not rootDir.dir_exists("assets"):
 		rootDir.make_dir("assets")
 		rootDir.make_dir("assets/textures")
+		rootDir.make_dir("assets/sound")
 		rootDir.make_dir("characters")
 		rootDir.make_dir("characters/textures")
+		rootDir.make_dir("characters/sounds")
 		rootDir.make_dir("world")
 		rootDir.make_dir("world/textures")
+		rootDir.make_dir("world/sounds")
 		rescanFiles()
 	else:
 		printerr("folder already exist")

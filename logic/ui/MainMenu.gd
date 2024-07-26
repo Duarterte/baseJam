@@ -1,9 +1,10 @@
-extends Control
+extends Menu
 @onready var gametTilteLabel: Label = $CenterContainer2/GametTitle
 @onready var versionLabel: Label = $versionLabel
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+	playMenuSounds()
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	if SGlobal.gameName: gametTilteLabel.text = SGlobal.gameName
 	if SGlobal.gameName: versionLabel.text    = SGlobal.version
 	if SGlobal.config[SGlobal.FIRSTBOOT]:

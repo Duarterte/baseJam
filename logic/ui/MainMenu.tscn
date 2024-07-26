@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://nhx6nh0hpm76"]
+[gd_scene load_steps=6 format=3 uid="uid://nhx6nh0hpm76"]
 
 [ext_resource type="Script" path="res://logic/ui/MainMenu.gd" id="1_5d2fq"]
+[ext_resource type="PackedScene" uid="uid://f41wub5py1t5" path="res://logic/ui/sound/menuSound.tscn" id="2_hqdf7"]
 
 [sub_resource type="Animation" id="Animation_bd8vy"]
 length = 0.001
@@ -49,6 +50,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5d2fq")
 
+[node name="MenuSound" parent="." instance=ExtResource("2_hqdf7")]
+
 [node name="CenterContainer2" type="CenterContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -82,7 +85,7 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 0
 
-[node name="StartBTN" type="Button" parent="VBoxContainer/MarginContainer"]
+[node name="StartBTN" type="Button" parent="VBoxContainer/MarginContainer" groups=["menu_btn"]]
 layout_mode = 2
 text = "Start"
 
@@ -93,7 +96,7 @@ theme_override_constants/margin_left = 30
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 30
 
-[node name="Settings" type="Button" parent="VBoxContainer/MarginContainer2"]
+[node name="Settings" type="Button" parent="VBoxContainer/MarginContainer2" groups=["menu_btn"]]
 layout_mode = 2
 text = "Settings"
 
@@ -105,7 +108,7 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 0
 
-[node name="Quit" type="Button" parent="VBoxContainer/MarginContainer3"]
+[node name="Quit" type="Button" parent="VBoxContainer/MarginContainer3" groups=["menu_btn"]]
 layout_mode = 2
 text = "Quit"
 
@@ -125,6 +128,7 @@ grow_horizontal = 0
 grow_vertical = 0
 
 [node name="SceneEntryCurtain" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.999

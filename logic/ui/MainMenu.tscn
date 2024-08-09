@@ -1,7 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://nhx6nh0hpm76"]
 
 [ext_resource type="Script" path="res://logic/ui/MainMenu.gd" id="1_5d2fq"]
-[ext_resource type="PackedScene" uid="uid://f41wub5py1t5" path="res://logic/ui/sound/menuSound.tscn" id="2_hqdf7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_25fvh"]
 
 [sub_resource type="Animation" id="Animation_bd8vy"]
 length = 0.001
@@ -50,7 +51,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5d2fq")
 
-[node name="MenuSound" parent="." instance=ExtResource("2_hqdf7")]
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="CenterContainer2" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -63,57 +70,49 @@ grow_horizontal = 2
 [node name="GametTitle" type="Label" parent="CenterContainer2"]
 layout_mode = 2
 
+[node name="PanelContainer" type="PanelContainer" parent="."]
+material = SubResource("ShaderMaterial_25fvh")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.3
-anchor_top = 0.225
-anchor_right = 0.7
-anchor_bottom = 0.537
-offset_left = -0.0639954
-offset_right = 0.0639648
-offset_bottom = -0.176025
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
 grow_horizontal = 2
+grow_vertical = 2
 pivot_offset = Vector2(0.463989, 0.0360107)
 alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+[node name="StartBTN" type="Button" parent="VBoxContainer" groups=["menu_btn"]]
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/margin_left = 30
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 30
-theme_override_constants/margin_bottom = 0
-
-[node name="StartBTN" type="Button" parent="VBoxContainer/MarginContainer" groups=["menu_btn"]]
-layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 text = "Start"
 
-[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+[node name="Settings" type="Button" parent="VBoxContainer" groups=["menu_btn"]]
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/margin_left = 30
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 30
-
-[node name="Settings" type="Button" parent="VBoxContainer/MarginContainer2" groups=["menu_btn"]]
-layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 text = "Settings"
 
-[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer"]
+[node name="Quit" type="Button" parent="VBoxContainer" groups=["menu_btn"]]
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/margin_left = 30
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 30
-theme_override_constants/margin_bottom = 0
-
-[node name="Quit" type="Button" parent="VBoxContainer/MarginContainer3" groups=["menu_btn"]]
-layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 text = "Quit"
-
-[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer"]
-layout_mode = 2
 
 [node name="versionLabel" type="Label" parent="."]
 layout_mode = 1
@@ -140,5 +139,5 @@ libraries = {
 "": SubResource("AnimationLibrary_bfbl1")
 }
 
-[connection signal="pressed" from="VBoxContainer/MarginContainer2/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="VBoxContainer/MarginContainer3/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

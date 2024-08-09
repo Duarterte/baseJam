@@ -9,7 +9,8 @@ var configValues: Dictionary
 enum {
 	FIRSTBOOT,
 	SHOWFPS,
-	SENSIVITY
+	SENSIVITY,
+	MUTED
 }
 
 func initialConfig(numberOfConfigs: int) -> void:
@@ -17,9 +18,10 @@ func initialConfig(numberOfConfigs: int) -> void:
 	config[FIRSTBOOT] = true
 	config[SHOWFPS]   = false
 	config[SENSIVITY] = false
+	config[MUTED] 	  = false
 	
 func _ready():
-	initialConfig(3)
+	initialConfig(4)
 	print(gameName + " " + version)
 	
 func setSensivity(sensv):

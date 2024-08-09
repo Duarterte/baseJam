@@ -2,8 +2,6 @@
 extends EditorPlugin
 var ctr: Control
 var addonDocket := preload("res://addons/zl_init_plugin/AddonDock.tscn")
-func  test():
-	print("yes")
 
 func _enter_tree():
 	ctr = Control.new()

@@ -23,6 +23,7 @@ func _on_button_pressed():
 		rootDir.make_dir("characters")
 		rootDir.make_dir("characters/textures")
 		rootDir.make_dir("characters/sounds")
+		rootDir.make_dir("characters/shaders")
 		rootDir.make_dir("world")
 		rootDir.make_dir("world/textures")
 		rootDir.make_dir("world/sounds")

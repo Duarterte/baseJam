@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://f41wub5py1t5"]
+[gd_scene load_steps=3 format=3 uid="uid://dfcmfa8kxgy6o"]
 
 [ext_resource type="AudioStream" uid="uid://dwgwv7rsj3fep" path="res://logic/ui/sound/blipSelect.wav" id="1_me837"]
 [ext_resource type="AudioStream" uid="uid://6lippaalirjq" path="res://logic/ui/sound/click.mp3" id="2_cxsp1"]
